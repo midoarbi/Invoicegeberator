@@ -95,17 +95,17 @@ class LineItemList extends Component {
     return (
       <div>
         <Row>
-          <Col sm={8}>Item</Col>
+          <Col sm={8}>Article</Col>
           <Col sm={1}>Quantity</Col>
-          <Col sm={1}>Rate</Col>
-          <Col sm={1}>Amount</Col>
+          <Col sm={1}>Taux</Col>
+          <Col sm={1}>Montant</Col>
           <Col sm={1} />
         </Row>
         {lineItemRows}
         <Row>
           <Col sm={8}>
             <Button bsStyle="success" onClick={this.props.onLineItemAddClick}>
-              + Add Line Item
+              + Ajouter un Article 
             </Button>
           </Col>
           <Col sm={1} />

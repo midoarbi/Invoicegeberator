@@ -116,27 +116,27 @@ function App() {
     setEditedInvoice({
       ...editedInvoice,
       invoiceNumber: '123',
-      fromName: 'John Smith\n123 Address St.\nLos Angeles, CA 12345',
+      fromName: 'El Mehdi Nassiri\n Hay Mohamadi\nMaroc, Casablanca 20000',
       imageLogo: null,
-      paymentTerms: 'Biweekly',
-      currency: 'USD',
-      toName: 'Jane Smith\n999 Address St.\nSeattle, WA 54321',
-      date: '2016-10-10',
-      dueDate: '2016-11-01',
+      paymentTerms: 'Projet à prix fixe',
+      currency: 'MAD',
+      toName: 'Ahmed taha alami\n sidi bernoussi.\nMaroc, Casablanca 20001',
+      date: '2020-06-06',
+      dueDate: '2020-06-26',
       lineItems: [
         {
-          description: 'Item #1',
+          description: 'Front End React js #1',
           quantity: 1,
           rate: 1.5,
         },
         {
-          description: 'Item #2',
+          description: 'Blockchain Integration #2',
           quantity: 2,
           rate: 2.5,
         },
       ],
-      notes: 'This invoice does not include service fees.',
-      terms: 'Payment must be made via PayPal.',
+      notes: 'ce projet a fait par moi el mehdi nassiri en tant que Freelancer',
+      terms: 'Le paiement doit être effectué via PayPal, Cih bank',
     });
   }
 
@@ -170,10 +170,10 @@ function App() {
   return (
     <div className="App">
       <div>
-        <PageHeader>Invoice Generator</PageHeader>
+        <PageHeader>générateur de factures</PageHeader>
         <p>
-          This is an invoice generator. Fill in the fields below and click
-          'Create Invoice' to generate the invoice as a PDF document.{' '}
+        Il s'agit d'un générateur de factures. Remplissez les champs ci-dessous et cliquez sur
+           «Créer une facture» pour générer la facture en tant que document PDF.{' '}
           <button onClick={onExampleLinkClick}>Click here</button> to see an
           example.
         </p>
@@ -199,7 +199,7 @@ function App() {
                 <FormControl
                   componentClass="textarea"
                   rows="3"
-                  placeholder="Who is this invoice from?"
+                  placeholder="De qui provient cette facture?"
                   value={editedInvoice.fromName}
                   onChange={onFieldValueChange.bind(this, 'fromName')}
                 />
@@ -227,7 +227,7 @@ function App() {
                 <FormControl
                   componentClass="textarea"
                   rows="3"
-                  placeholder="Who is this invoice to?"
+                  placeholder="À qui est adressée cette facture? "
                   value={editedInvoice.toName}
                   onChange={onFieldValueChange.bind(this, 'toName')}
                 />
@@ -276,7 +276,7 @@ function App() {
               <Col sm={10}>
                 <FormControl
                   componentClass="select"
-                  placeholder="Select currency"
+                  placeholder="Sélectionnez la devise"
                   defaultValue={editedInvoice.currency}
                   onChange={onFieldValueChange.bind(this, 'currency')}
                 >
@@ -301,7 +301,7 @@ function App() {
               <ControlLabel>Notes</ControlLabel>
               <FormControl
                 componentClass="textarea"
-                placeholder="Notes - any relevant information not already covered"
+                placeholder="Notes - toute information pertinente non déjà couverte"
                 value={editedInvoice.notes}
                 onChange={onFieldValueChange.bind(this, 'notes')}
               />
@@ -310,9 +310,9 @@ function App() {
               <ControlLabel>Terms</ControlLabel>
               <FormControl
                 componentClass="textarea"
-                placeholder="Terms and conditions - late fees, payment methods, delivery schedule"
+                placeholder="Conditions générales - frais de retard, modes de paiement, calendrier de livraison"
                 value={editedInvoice.terms}
-                onChange={onFieldValueChange.bind(this, 'terms')}
+                onChange={onFieldValueChange.bind(this, 'Conditions')}
               />
             </FormGroup>
           </Form>
@@ -320,11 +320,11 @@ function App() {
         <div className="Footer-Container">
           <div className="Footer">
             <Col sm={2}>
-              <Button onClick={onClearFormClick}>Clear Form</Button>
+              <Button onClick={onClearFormClick}>Effacer La Form</Button>
             </Col>
             <Col smOffset={8} sm={2}>
               <Button onClick={onSubmitClick} bsStyle="primary">
-                Create Invoice
+              Créer une facture
               </Button>
             </Col>
           </div>

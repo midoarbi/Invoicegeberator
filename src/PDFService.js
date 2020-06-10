@@ -46,8 +46,8 @@ function buildHeaderInformation(params) {
 
   Object.entries({
     Date: params.date,
-    'Payment Terms': params.paymentTerms,
-    'Due Date': params.dueDate,
+    'paiement': params.paymentTerms,
+    'echeance': params.dueDate,
   }).forEach(([key, value]) => {
     if (value) {
       optionalDataKeys.push(key);
@@ -65,7 +65,7 @@ function buildHeaderInformation(params) {
             margin: [0, 30, 0, 30],
           },
           {
-            text: 'Bill To',
+            text: 'Facturer A :',
             margin: [0, 0, 0, 0],
           },
           {
@@ -76,7 +76,7 @@ function buildHeaderInformation(params) {
       {
         stack: [
           {
-            text: 'INVOICE',
+            text: "FACTURE D'ACHAT",
             fontSize: 25,
           },
           {
@@ -124,9 +124,9 @@ function buildLineItemsTable(params) {
       body: [
         [
           'Item',
-          { text: 'Quantity', alignment: 'right' },
-          { text: 'Rate', alignment: 'right' },
-          { text: 'Amount', alignment: 'right' },
+          { text: 'Quantité', alignment: 'right' },
+          { text: 'Taux', alignment: 'right' },
+          { text: 'Montant', alignment: 'right' },
         ],
         ...lineItemRows,
       ],
@@ -172,7 +172,7 @@ function buildNotesAndTerms(params) {
   }
   if (params.terms) {
     result = result.concat([
-      { text: 'Terms' },
+      { text: 'termes' },
       { text: params.terms, margin: [0, 0, 0, 30] },
     ]);
   }
